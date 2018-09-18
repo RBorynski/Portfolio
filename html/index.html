@@ -182,12 +182,12 @@ height: ;
 <script>
  const unveilButton = document.getElementById('unveil');
 const marioPipe = document.getElementById('contact')
+let hasUnveilButtonBeenClicked = false
 
 if (matchMedia)
 { const x =  window.matchMedia("(max-width: 480px)");
 x.addListener(responsivenessOnPipe);
   responsivenessOnPipe(x);}
-let hasUnveilButtonBeenClicked = false
 document.querySelectorAll(li).onclick = highlight;
 function highlight() {
 document.querySelectorAll(li).style.background="black";
@@ -196,17 +196,30 @@ document.querySelectorAll(li).style.background="black";
 function responsivenessOnPipe(x) {
 
     if (x.matches) {
-     marioPipe.style.top = "0";
-    unveilButton.style.background = "red";
+    if (!hasUnveilButtonBeenClicked)
+  {  unveilButton.style.background = "red";
  unveilButton.addEventListener("click", function(evt) {
  marioPipe.style.top = "45%";
  hasUnveilButtonBeenClicked = true ;
-});
-    } else  {
-unveilButton.addEventListener("click", function(evt) {
+});}
+ else {
+  //if the button was already clicked at a different browser width and you want to adjust the pipe to the current height
+marioPipe.style.top = "45%";
+ }
+    } else
+  {
+ if (!hasUnveilButtonBeenClicked)
+  {  unveilButton.style.background = "orange";
+ unveilButton.addEventListener("click", function(evt) {
  marioPipe.style.top = "65%";
-});
-    }
+ hasUnveilButtonBeenClicked = true ;
+});}
+ else {
+marioPipe.style.top = "65%";
+ }
+
+  }
+
 }
 
 
