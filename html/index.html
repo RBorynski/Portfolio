@@ -1,4 +1,5 @@
 <head>
+ <meta name="viewport" content="width=device-width">
 <style>
 
 html, body: {
@@ -56,7 +57,7 @@ ul, toolbar, pic,
                 margin: auto;
                 border-radius: 20% 20% 0 0;
                 display:flex;
-                height: 70%;
+                height: 100%;
 
                 flex-grow: 8;
                 background-size : 80% ;
@@ -135,7 +136,7 @@ p {
 }
 }
 
-@media screen and (max-width: 480px) and (min-width: 350px)
+@media screen and (max-width: 480px)
 {
 #contact{
   width: 100%;
@@ -183,30 +184,42 @@ height: ;
  const unveilButton = document.getElementById('unveil');
 const marioPipe = document.getElementById('contact')
 let hasUnveilButtonBeenClicked = false
+// used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as template for setting up multiple window matches
+var mqls =
+[ window.matchMedia("(max-width: 480px)"),
+  window.matchMedia("(max-width: 738px) and (min-width: 480px)")];
 
-if (matchMedia)
-{ const x =  window.matchMedia("(max-width: 480px)");
-x.addListener(responsivenessOnPipe);
-  responsivenessOnPipe(x);}
-document.querySelectorAll(li).onclick = highlight;
-function highlight() {
-document.querySelectorAll(li).style.background="black";
-}
-
-function responsivenessOnPipe(x) {
-
-    if (x.matches) {
+function responsivenessOnPipe(mql) {
+const four80 = mqls[0];
+    if (four80.matches) {
+      console.log(mqls);
     if (!hasUnveilButtonBeenClicked)
   {  unveilButton.style.background = "red";
  unveilButton.addEventListener("click", function(evt) {
- marioPipe.style.top = "45%";
+ marioPipe.style.top = "100%";
+ hasUnveilButtonBeenClicked = true ;
+});}
+ else {
+  //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
+marioPipe.style.top = "100%";
+ }
+    }
+else if (mqls[1].matches) {
+    if (!hasUnveilButtonBeenClicked)
+  {  unveilButton.style.background = "blue";
+ unveilButton.addEventListener("click", function(evt) {
+ marioPipe.style.top = "55%";
  hasUnveilButtonBeenClicked = true ;
 });}
  else {
   //if the button was already clicked at a different browser width and you want to adjust the pipe to the current height
-marioPipe.style.top = "45%";
+marioPipe.style.top = "55%";
  }
-    } else
+    }
+
+
+
+     else
   {
  if (!hasUnveilButtonBeenClicked)
   {  unveilButton.style.background = "orange";
@@ -220,6 +233,10 @@ marioPipe.style.top = "65%";
 
   }
 
+}
+for (var i=0; i<mqls.length; i++){
+    responsivenessOnPipe(mqls[i]); // call listener function explicitly at run time
+    mqls[i].addListener(responsivenessOnPipe); // attach listener function to listen in on state changes
 }
 
 
