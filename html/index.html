@@ -1,125 +1,119 @@
 <head>
- <meta name="viewport" content="width=device-width">
-<style>
+  <meta name="viewport" content="width=device-width">
+  <style>
+  html,
+  body: {
+    height: auto;
+    width: 100%;
+  }
 
-html, body: {
-height: auto;
-width: 100%;
-}
 
-
-  .me{
-ul, toolbar, pic,
+  .me {
+    ul,
+    toolbar,
+    pic,
     z-index: -1;
 
 
-   height: 75%;
-   z-index: -1;
-
-
+    height: 75%;
+    z-index: -1;
   }
 
 
 
 
 
-           ul {
-              padding: 3%;
-              text-align: center;
-              font-size: 20px;
-              color: white;
-              display: flex;
-              flex-direction: row;
-              justify-content: center;
-              width: 80%;
-              margin: 0 auto;
-            }
-           li {
-            display: inline;
-            border-width: 2px;
-            border-color: red;
-            border-style: solid;
-            padding: 0;
-            }
-            a {
-              color: white;
-            }
-
-            #toolbar{
-              background:orange;
-              }
-
-          .pic{
-                background-image: url("ScreenShot.png") ;
-                background-size: cover;
-                color: white;
-                z-index: -1;
-                margin: auto;
-                border-radius: 20% 20% 0 0;
-                display:flex;
-                height: 100%;
-
-                flex-grow: 8;
-                background-size : 80% ;
-                background-repeat: no-repeat;
-                background-position: center;
-
-
-
-                }
-
-
-
-  #contact{
-  background-color: black;
-  color: white;
- /* background-size: cover;*/
-  background-image: url("mariopipe.png");
-  display:flex;
-
-flex-direction: column;
-align-items: center;
-position: absolute;
-top: 0;
-transition: top 10s;
-/*  flex-basis: auto;  default auto */
-background-size : cover;
-width: 100%;
-background-repeat: no-repeat;
-background-position: center;
-height: auto;
-margin: 0 auto;
-
+  ul {
+    padding: 3%;
+    text-align: center;
+    font-size: 3vmax;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
   }
 
-/*#contact:click {
+  li {
+    display: inline;
+    border-width: 2px;
+    border-color: red;
+    border-style: solid;
+    padding: 0;
+  }
+
+  a {
+    color: white;
+  }
+
+  #toolbar {
+    background: orange;
+  }
+
+  .pic {
+    background-image: url("ScreenShot.png");
+    background-size: cover;
+    color: white;
+    z-index: -1;
+    margin: auto;
+    border-radius:  30% 30% 0 0;
+    display: flex;
+    height: 100%;
+
+    flex-grow: 8;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+
+
+  #contact {
+    background-color: black;
+    color: white;
+    /* background-size: cover;*/
+    background-image: url("mariopipe.png");
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    transition: top 10s;
+    /*  flex-basis: auto;  default auto */
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: auto;
+    margin: 0 auto;
+  }
+  /*#contact:click {
     top: 600px;
 }*/
 
-  p{
+  p {
     background-color: black;
     /*margin: 100px 140px 0 140px;*/
-
     border-color: gold;
-     /*border-width: 5px;*/
-     border-style: solid;
-     display: flex;
-   /* padding: 120px 100px;*/
+    /*border-width: 5px;*/
+    border-style: solid;
+    display: flex;
+    /* padding: 120px 100px;*/
     /*flex-shrink:6;*/
     width: 80%;
     font-size: 4vmax;
-     line-height: 4vmax;
-     }
+    line-height: 4vmax;
+  }
 
-         #unveil{
-  /*the unveil button*/
-          display: flex;
-          padding: 50px;
-          font-size: 5vmax;
-        align-items: center;
-
-
-         }
+  #unveil {
+    /*the unveil button*/
+    display: flex;
+    padding: 50px;
+    font-size: 5vmax;
+    align-items: center;
+  }
 
 
 
@@ -127,119 +121,118 @@ margin: 0 auto;
 
 
   @media screen and (max-width: 1024px) and (orientation: landscape)
+/*tablet landscape*/
   {
-#contact{
-  width: 1024px;
-  }
-p {
-  background-color: brown;
-}
-}
-
-@media screen and (max-width: 480px)
-{
-#contact{
-  width: 100%;
-}
-p {
-  background-color: silver;
-}
-.pic{
-position: relative;
-top: -60px;
-background-size: 100%;
-height: ;
+    p {
+      background-color: brown;
     }
-}
+  }
 
-</style>
+  @media screen and (max-width: 480px) {
+    /*phone portrait */
+   /* window.matchMedia[0]*/
+
+    p {
+      background-color: silver;
+    }
+    .pic {
+      position: relative;
+      top: -60px;
+      background-size: 100%;
+      height: ;
+    }
+  }
+
+  </style>
 </head>
 
 <body>
-
- <div class="me">
-   <ul id= "toolbar">
+  <div class="me">
+    <ul id="toolbar">
       <li><a href="https://still-earth-11122.herokuapp.com">Calendar App</a></li>
       <li><a href="https://dash.generalassemb.ly/RBor/build-your-own-blog-theme">Blog Posts</a></li>
       <li><a href="https://floating-escarpment-43951.herokuapp.com/">E-Reader</a></li>
     </ul>
-     <div class="pic"> </div>
+    <div class="pic"> </div>
+  </div>
+  <div id='contact'>
+    <button id='unveil'>Click Here!</button>
+    <p> Steve Jobs once said “You can't connect the dots looking forward; you can only connect them looking backwards.” Coming from a content and marketing background, I thought I was jumping ship and changing careers completely by attending a software engineering bootcamp. What I realized Is that development and content go hand in hand as melody and rhyme in creating a great overall product for people to experience. Through my time at General Assembly, I engineered and designed products where the content and code were interwined, such as a themed "Man vs. Machine" Rock, Paper, Scissors game and an intuitive E-Reader. I am looking to work with those that share in that vision.
+    </p>
+  </div>
+  <script>
+  const unveilButton = document.getElementById('unveil');
+  const marioPipe = document.getElementById('contact')
+  let hasUnveilButtonBeenClicked = false
+  // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as template for setting up multiple window matches
+  var mqls = [window.matchMedia("(max-width: 480px)"),
+    window.matchMedia("(min-width: 764px) and (max-width: 1024px) and (orientation:portrait)"),
+ window.matchMedia("(min-width: 481px) and (max-width: 880px)and (orientation:landscape)")
+ ];
 
-
-
- </div>
-
-
-
-
-
-<div id='contact'>
-   <button id='unveil'>Click Here!</button>
-   <p> Steve Jobs once said “You can't connect the dots looking forward; you can only connect them looking backwards.” Coming from a content and marketing background, I thought I was jumping ship and changing careers completely by attending a software engineering bootcamp. What I realized Is that development and content go hand in hand as melody and rhyme in creating a great overall product for people to experience. Through my time at General Assembly, I engineered and designed products where the content and code were interwined, such as a themed "Man vs. Machine" Rock, Paper, Scissors game and an intuitive E-Reader. I am looking to work with those that share in that vision.
-
- </p>
-</div>
-
-<script>
- const unveilButton = document.getElementById('unveil');
-const marioPipe = document.getElementById('contact')
-let hasUnveilButtonBeenClicked = false
-// used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as template for setting up multiple window matches
-var mqls =
-[ window.matchMedia("(max-width: 480px)"),
-  window.matchMedia("(max-width: 738px) and (min-width: 480px)")];
-
-function responsivenessOnPipe(mql) {
-const four80 = mqls[0];
+  function responsivenessOnPipe(mql) {
+    const four80 = mqls[0];
     if (four80.matches) {
-      console.log(mqls);
-    if (!hasUnveilButtonBeenClicked)
-  {  unveilButton.style.background = "red";
- unveilButton.addEventListener("click", function(evt) {
- marioPipe.style.top = "100%";
- hasUnveilButtonBeenClicked = true ;
-});}
- else {
-  //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
-marioPipe.style.top = "100%";
- }
-    }
-else if (mqls[1].matches) {
-    if (!hasUnveilButtonBeenClicked)
-  {  unveilButton.style.background = "blue";
- unveilButton.addEventListener("click", function(evt) {
- marioPipe.style.top = "55%";
- hasUnveilButtonBeenClicked = true ;
-});}
- else {
-  //if the button was already clicked at a different browser width and you want to adjust the pipe to the current height
-marioPipe.style.top = "55%";
- }
+    // 480  cell phone portrait
+      if (!hasUnveilButtonBeenClicked) {
+        unveilButton.style.background = "red";
+        unveilButton.addEventListener("click", function(evt) {
+          marioPipe.style.top = "50%";
+          hasUnveilButtonBeenClicked = true;
+        });
+      } else {
+        //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
+        marioPipe.style.top = "50%";
+      }
     }
 
 
+    else if (mqls[1].matches) {
+      // tablet portrait
+      if (!hasUnveilButtonBeenClicked) {
+        unveilButton.style.background = "blue";
+        unveilButton.addEventListener("click", function(evt) {
+          marioPipe.style.top = "55%";
+          hasUnveilButtonBeenClicked = true;
+        });
+      } else {
+        //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
+        marioPipe.style.top = "55%";
+      }
+    }
 
-     else
-  {
- if (!hasUnveilButtonBeenClicked)
-  {  unveilButton.style.background = "orange";
- unveilButton.addEventListener("click", function(evt) {
- marioPipe.style.top = "65%";
- hasUnveilButtonBeenClicked = true ;
-});}
- else {
-marioPipe.style.top = "65%";
- }
+    else if (mqls[2].matches) {
+      // phone landscape
+      if (!hasUnveilButtonBeenClicked) {
+        unveilButton.style.background = "salmon";
+        unveilButton.addEventListener("click", function(evt) {
+          marioPipe.style.top = "80%";
+          hasUnveilButtonBeenClicked = true;
+        });
+      } else {
+        //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
+        marioPipe.style.top = "80%";
+      }
+    }
 
+    else {
+      if (!hasUnveilButtonBeenClicked) {
+        unveilButton.style.background = "orange";
+        unveilButton.addEventListener("click", function(evt) {
+          marioPipe.style.top = "65%";
+          hasUnveilButtonBeenClicked = true;
+        });
+      } else {
+        marioPipe.style.top = "65%";
+      }
+    }
   }
 
-}
-for (var i=0; i<mqls.length; i++){
+
+  for (var i = 0; i < mqls.length; i++) {
     responsivenessOnPipe(mqls[i]); // call listener function explicitly at run time
     mqls[i].addListener(responsivenessOnPipe); // attach listener function to listen in on state changes
-}
+  }
 
-
-</script>
-
+  </script>
 </body>
