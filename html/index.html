@@ -5,6 +5,7 @@
   body: {
     height: auto;
     width: 100%;
+  transition:5s;
   }
 
 
@@ -153,6 +154,8 @@
   <script>
   const unveilButton = document.getElementById('unveil');
   const marioPipe = document.getElementById('contact')
+   var list = document.getElementById('toolbar')
+
   let hasUnveilButtonBeenClicked = false
   // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as template for setting up multiple window matches
   var mqls = [window.matchMedia("(max-width: 480px)"),
@@ -169,6 +172,7 @@
         unveilButton.addEventListener("click", function(evt) {
           marioPipe.style.top = "50%";
           hasUnveilButtonBeenClicked = true;
+         list.scrollIntoView(true);
         });
       } else {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
@@ -184,6 +188,7 @@
         unveilButton.addEventListener("click", function(evt) {
           marioPipe.style.top = "55%";
           hasUnveilButtonBeenClicked = true;
+          list.scrollIntoView();
         });
       } else {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
@@ -198,6 +203,7 @@
         unveilButton.addEventListener("click", function(evt) {
           marioPipe.style.top = "80%";
           hasUnveilButtonBeenClicked = true;
+          list.scrollIntoView(true);
         });
       } else {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
@@ -211,6 +217,7 @@
         unveilButton.addEventListener("click", function(evt) {
           marioPipe.style.top = "70%";
           hasUnveilButtonBeenClicked = true;
+          list.scrollIntoView(true);
         });
       } else {
         marioPipe.style.top = "70%";
