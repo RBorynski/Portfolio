@@ -5,7 +5,7 @@
   body: {
     height: auto;
     width: 100%;
-  transition:5s;
+    transition: 5s;
   }
 
 
@@ -20,11 +20,7 @@
     z-index: -1;
   }
 
-
-
-
-
-  ul {
+  #showPortfButton {
     padding: 3%;
     text-align: center;
     font-size: 3vmax;
@@ -32,9 +28,11 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    width: 80%;
+    /* width: 80%;*/
     margin: 0 auto;
+    background: orange;
   }
+
 
   li {
     display: inline;
@@ -48,9 +46,7 @@
     color: white;
   }
 
-  #toolbar {
-    background: orange;
-  }
+
 
   .pic {
     background-image: url("ScreenShot.png");
@@ -58,7 +54,7 @@
     color: white;
     z-index: -1;
     margin: auto;
-    border-radius:  30% 30% 0 0;
+    border-radius: 30% 30% 0 0;
     display: flex;
     height: 100%;
 
@@ -122,66 +118,131 @@
 
 
   @media screen and (max-width: 1024px) and (orientation: landscape)
-/*tablet landscape*/{}
+  /*tablet landscape*/
+
+  {}
 
   @media screen and (max-width: 480px) {
     /*phone portrait */
-   /* window.matchMedia[0]*/
+    /* window.matchMedia[0]*/
     .pic {
       position: relative;
       top: -60px;
       background-size: 100%;
     }
   }
+.menu {
+    padding: 3%;
+    text-align: center;
+    font-size: 3vmax;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 80%;
+    margin: 0 auto;
+  background: orange;
+  }
 
+
+
+  .dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.category {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.category:hover .dropdown-content {display: flex;}
+
+.category:hover .dropbtn {background-color: #3e8e41;}
   </style>
 </head>
 
 <body>
   <div class="me">
-    <ul id="toolbar">
+    <!-- <ul id="toolbar">
       <li><a href="https://still-earth-11122.herokuapp.com">Calendar App</a></li>
       <li><a href="https://dash.generalassemb.ly/RBor/build-your-own-blog-theme">Blog Posts</a></li>
       <li><a href="https://floating-escarpment-43951.herokuapp.com/">E-Reader</a></li>
-    </ul>
+    </ul> -->
+    <div class="menu">
+      <div class="category">
+        <button class="dropbtn">Coding Projects</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="category">
+        <button class="dropbtn">Social Media</button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    </div>
     <div class="pic"> </div>
   </div>
   <div id='contact'>
     <p> Steve Jobs once said “You can't connect the dots looking forward; you can only connect them looking backwards.” Coming from a content and marketing background, I thought I was jumping ship and changing careers completely by attending a software engineering bootcamp. What I realized Is that development and content go hand in hand as melody and rhyme in creating a great overall product for people to experience. Through my time at General Assembly, I engineered and designed products where the content and code were interwined, such as a themed "Man vs. Machine" Rock, Paper, Scissors game and an intuitive E-Reader. I am looking to work with those that share in that vision.
     </p>
-   <button id='unveil'>Click Here!</button>
+    <button id='unveil'>Click Here!</button>
   </div>
   <script>
   const unveilButton = document.getElementById('unveil');
   const marioPipe = document.getElementById('contact')
-   var list = document.getElementById('toolbar')
+  const list = document.getElementById('showPortfButton')
 
   let hasUnveilButtonBeenClicked = false
   // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as template for setting up multiple window matches
   var mqls = [window.matchMedia("(max-width: 480px)"),
     window.matchMedia("(min-width: 764px) and (max-width: 1024px) and (orientation:portrait)"),
- window.matchMedia("(min-width: 481px) and (max-width: 880px)and (orientation:landscape)")
- ];
+    window.matchMedia("(min-width: 481px) and (max-width: 880px)and (orientation:landscape)")
+  ];
 
   function responsivenessOnPipe(mql) {
     const four80 = mqls[0];
     if (four80.matches) {
-    // 480  cell phone portrait
+      // 480  cell phone portrait
       if (!hasUnveilButtonBeenClicked) {
         unveilButton.style.background = "red";
         unveilButton.addEventListener("click", function(evt) {
           marioPipe.style.top = "50%";
           hasUnveilButtonBeenClicked = true;
-         list.scrollIntoView(true);
+          list.scrollIntoView(true);
         });
       } else {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
         marioPipe.style.top = "50%";
       }
-    }
-
-
-    else if (mqls[1].matches) {
+    } else if (mqls[1].matches) {
       // tablet portrait
       if (!hasUnveilButtonBeenClicked) {
         unveilButton.style.background = "blue";
@@ -194,9 +255,7 @@
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
         marioPipe.style.top = "55%";
       }
-    }
-
-    else if (mqls[2].matches) {
+    } else if (mqls[2].matches) {
       // phone landscape
       if (!hasUnveilButtonBeenClicked) {
         unveilButton.style.background = "salmon";
@@ -209,9 +268,7 @@
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
         marioPipe.style.top = "80%";
       }
-    }
-
-    else {
+    } else {
       if (!hasUnveilButtonBeenClicked) {
         unveilButton.style.background = "orange";
         unveilButton.addEventListener("click", function(evt) {
