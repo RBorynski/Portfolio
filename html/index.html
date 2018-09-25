@@ -267,64 +267,15 @@ drynessOnPipe (mqls[2], "80%")
 drynessOnPipe (mqls[3], "90%")
 
 
-    // if (four80.matches) {
-    //   // 480  cell phone portrait
-    //   if (!hasUnveilButtonBeenClicked) {
-    //     // unveilButton.style.background = "red";
-    //     unveilButton.addEventListener("click", function(evt) {
-    //       marioPipe.style.top = "50%";
-    //       hasUnveilButtonBeenClicked = true;
-    //       list.scrollIntoView(true);
-    //     });
-    //   } else {
-    //     //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
-    //     marioPipe.style.top = "50%";
-    //   }
-    // } else if (mqls[1].matches) {
-    //   // tablet portrait
-    //   if (!hasUnveilButtonBeenClicked) {
-    //     // unveilButton.style.background = "blue";
-    //     unveilButton.addEventListener("click", function(evt) {
-    //       marioPipe.style.top = "60%";
-    //       hasUnveilButtonBeenClicked = true;
-    //       list.scrollIntoView();
-    //     });
-    //   } else {
-    //     //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
-    //     marioPipe.style.top = "60%";
-    //   }
-    // } else if (mqls[2].matches) {
-    //   // phone landscape
-    //   if (!hasUnveilButtonBeenClicked) {
-    //     // unveilButton.style.background = "salmon";
-    //     unveilButton.addEventListener("click", function(evt) {
-    //       marioPipe.style.top = "80%";
-    //       hasUnveilButtonBeenClicked = true;
-    //       list.scrollIntoView(true);
-    //     });
-    //   } else {
-    //     //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
-    //     marioPipe.style.top = "80%";
-    //   }
-    // } else {
-    //   if (!hasUnveilButtonBeenClicked) {
-    //     // unveilButton.style.background = "orange";
-    //     unveilButton.addEventListener("click", function(evt) {
-    //       marioPipe.style.top = "100%";
-    //       hasUnveilButtonBeenClicked = true;
-    //       list.scrollIntoView(true);
-    //     });
-    //   } else {
-    //     marioPipe.style.top = "100%";
-    //   }
     }
 
 
 
-  for (var i = 0; i < mqls.length; i++) {
+  for (let i = 0; i < mqls.length; i++) {
     responsivenessOnPipe(mqls[i]); // call listener function explicitly at run time
     mqls[i].addListener(responsivenessOnPipe); // attach listener function to listen in on state changes
   }
 
   </script>
+<script src="script.js"></script>
 </body>
