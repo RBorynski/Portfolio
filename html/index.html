@@ -27,7 +27,7 @@
     color: white;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     /* width: 80%;*/
     margin: 0 auto;
     background: orange;
@@ -110,6 +110,8 @@
     padding: 50px;
     font-size: 5vmax;
     align-items: center;
+    background-color : rgba(101, 15, 22, 0.45);
+  font-style: Times ;
   }
 
 
@@ -134,11 +136,10 @@
 .menu {
     padding: 3%;
     text-align: center;
-    font-size: 3vmax;
     color: white;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     width: 80%;
     margin: 0 auto;
   background: orange;
@@ -150,9 +151,10 @@
   .dropbtn {
     background-color: #4CAF50;
     color: white;
-    padding: 16px;
-   /* font-size: 16px;*/
+ /*   padding: 16px;
+*/   /* font-size: 16px;*/
     border: none;
+font-size: 3vmax;
 }
 
 .category {
@@ -195,7 +197,7 @@ flex-direction: column;
     </ul> -->
     <div class="menu">
       <div class="category">
-        <button class="dropbtn">Coding Projects</button>
+        <button class="dropbtn">Coding <br/>Projects</button>
         <div class="dropdown-content">
           <a href="#">Link 1</a>
           <a href="#">Link 2</a>
@@ -203,7 +205,15 @@ flex-direction: column;
         </div>
       </div>
       <div class="category">
-        <button class="dropbtn">Social Media</button>
+        <button class="dropbtn">Social <br/> Media </button>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    <div class="category">
+        <button class="dropbtn">Social <br/> Media </button>
         <div class="dropdown-content">
           <a href="#">Link 1</a>
           <a href="#">Link 2</a>
@@ -221,7 +231,7 @@ flex-direction: column;
   <script>
   const unveilButton = document.getElementById('unveil');
   const marioPipe = document.getElementById('contact')
-  const list = document.getElementById('showPortfButton')
+  const list = document.getElementsByClassName('menu')[0]
 
   let hasUnveilButtonBeenClicked = false
   // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as template for setting up multiple window matches
@@ -235,7 +245,7 @@ flex-direction: column;
     if (four80.matches) {
       // 480  cell phone portrait
       if (!hasUnveilButtonBeenClicked) {
-        unveilButton.style.background = "red";
+        // unveilButton.style.background = "red";
         unveilButton.addEventListener("click", function(evt) {
           marioPipe.style.top = "50%";
           hasUnveilButtonBeenClicked = true;
@@ -248,20 +258,20 @@ flex-direction: column;
     } else if (mqls[1].matches) {
       // tablet portrait
       if (!hasUnveilButtonBeenClicked) {
-        unveilButton.style.background = "blue";
+        // unveilButton.style.background = "blue";
         unveilButton.addEventListener("click", function(evt) {
-          marioPipe.style.top = "55%";
+          marioPipe.style.top = "60%";
           hasUnveilButtonBeenClicked = true;
           list.scrollIntoView();
         });
       } else {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
-        marioPipe.style.top = "55%";
+        marioPipe.style.top = "60%";
       }
     } else if (mqls[2].matches) {
       // phone landscape
       if (!hasUnveilButtonBeenClicked) {
-        unveilButton.style.background = "salmon";
+        // unveilButton.style.background = "salmon";
         unveilButton.addEventListener("click", function(evt) {
           marioPipe.style.top = "80%";
           hasUnveilButtonBeenClicked = true;
@@ -273,14 +283,14 @@ flex-direction: column;
       }
     } else {
       if (!hasUnveilButtonBeenClicked) {
-        unveilButton.style.background = "orange";
+        // unveilButton.style.background = "orange";
         unveilButton.addEventListener("click", function(evt) {
-          marioPipe.style.top = "70%";
+          marioPipe.style.top = "100%";
           hasUnveilButtonBeenClicked = true;
           list.scrollIntoView(true);
         });
       } else {
-        marioPipe.style.top = "70%";
+        marioPipe.style.top = "100%";
       }
     }
   }
