@@ -166,7 +166,7 @@ font-size: 3vmax;
     display: inline-block;
 }
 
-.sub-category {
+.sub-category_List {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -175,32 +175,32 @@ font-size: 3vmax;
     z-index: 1;
 }
 
-.sub-category a {
+.sub-category_List a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.sideContent {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: none;
-}
 
-.sub-category a:hover {background-color: #ddd;}
 
-.category:hover .sub-category {display: flex;
+.sub-category_List a:hover {background-color: #ddd;}
+
+.category:hover .sub-category_List {display: flex;
 flex-direction: column;
 }
 
-.category:hover .dropbtn {background-color: #3e8e41;}
-
-/*.sub-category: hover .sideContent {display: flex;
-flex-direction: row;*/
+.tabl {
+  width: 400%;
+  background-color: blue;
+  height: 400%;
+z-index: 3;
 }
-
+td{
+display-flex;
+border-style: solid;
+border:5px solid red;
+}
 
 
   </style>
@@ -209,15 +209,34 @@ flex-direction: row;*/
 
 <body>
   <div class="me">
-    <!-- <ul id="toolbar">
-      <li><a href="https://still-earth-11122.herokuapp.com">Calendar App</a></li>
-      <li><a href="https://dash.generalassemb.ly/RBor/build-your-own-blog-theme">Blog Posts</a></li>
-      <li><a href="https://floating-escarpment-43951.herokuapp.com/">E-Reader</a></li>
-    </ul> -->
+
     <nav>
       <div class="category">
         <button class="dropbtn">Coding <br/>Projects</button>
-        <div class="sub-category">
+        <div class="sub-category_List tabl">
+        <table>
+  <tr>
+    <th>Project</th>
+    <th>Live</th>
+    <th>Github</th>
+  </tr>
+  <tr>
+    <td>Rock <br/> Paper <br/>Scissors</td>
+    <td> Live </td>
+    <td>Github</td>
+  </tr>
+  <tr>
+    <td>Calendar App</td>
+    <td> <a href="https://github.com/mattesongrossman/Calendar_App">Github</a></td>
+    <td> <a href="https://still-earth-11122.herokuapp.com">Live</a>
+     </td>
+  </tr>
+</table>
+        </div>
+      </div>
+     <div class="category">
+        <button class="dropbtn">Coding <br/>Projects</button>
+        <div class="sub-category_List">
           <a href="#">Link 1</a>
           <a href="#">Link 2</a>
           <a href="#">Link 3</a>
@@ -225,15 +244,7 @@ flex-direction: row;*/
       </div>
       <div class="category">
         <button class="dropbtn">Coding <br/>Projects</button>
-        <div class="sub-category">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
-      <div class="category">
-        <button class="dropbtn">Coding <br/>Projects</button>
-        <div class="sub-category">
+        <div class="sub-category_List">
           <a href="#">Link 1</a>
           <a href="#">Link 2</a>
           <a href="#">Link 3</a>
@@ -246,7 +257,7 @@ flex-direction: row;*/
   <div id='contact'>
     <p> Steve Jobs once said “You can't connect the dots looking forward; you can only connect them looking backwards.” Coming from a content and marketing background, I thought I was jumping ship and changing careers completely by attending a software engineering bootcamp. What I realized Is that development and content go hand in hand as melody and rhyme in creating a great overall product for people to experience. Through my time at General Assembly, I engineered and designed products where the content and code were interwined, such as a themed "Man vs. Machine" Rock, Paper, Scissors game and an intuitive E-Reader. I am looking to work with those that share in that vision.
     </p>
-    <button id='unveil'>Click Here!</button>
+    <button id='unveil'>Continue!</button>
   </div>
 
 <script src="script.js"></script>

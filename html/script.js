@@ -1,6 +1,6 @@
 const unveilButton = document.getElementById("unveil");
 const marioPipe = document.getElementById("contact");
-const list = document.getElementsByClassName("menu")[0];
+const list = document.getElementsByTagName("nav")[0];
 
 let hasUnveilButtonBeenClicked = false;
 // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as guide  for setting up multiple window matches
