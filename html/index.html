@@ -67,7 +67,7 @@
 
 
   #contact {
-    background-color: black;
+   background-color:black;
     color: white;
     /* background-size: cover;*/
     background-image: url("mariopipe.png");
@@ -91,7 +91,7 @@
 }*/
 
   p {
-    background-color: black;
+    background-color:rgb(112, 40, 59, .5);
     /*margin: 100px 140px 0 140px;*/
     border-color: gold;
     /*border-width: 5px;*/
@@ -124,14 +124,16 @@
 
   {}
 
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 1020px) and (orientation: portrait) {
     /*phone portrait */
     /* window.matchMedia[0]*/
     .pic {
       position: relative;
-      top: -60px;
+      top: -90px;
       background-size: 100%;
     }
+
+
   }
 .menu {
     padding: 3%;
@@ -162,7 +164,7 @@ font-size: 3vmax;
     display: inline-block;
 }
 
-.dropdown-content {
+.sub-category {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -171,21 +173,36 @@ font-size: 3vmax;
     z-index: 1;
 }
 
-.dropdown-content a {
+.sub-category a {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown-content a:hover {background-color: #ddd;}
+.sideContent {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: none;
+}
 
-.category:hover .dropdown-content {display: flex;
+.sub-category a:hover {background-color: #ddd;}
+
+.category:hover .sub-category {display: flex;
 flex-direction: column;
 }
 
 .category:hover .dropbtn {background-color: #3e8e41;}
+
+.sub-category: hover .sideContent {display: flex;
+flex-direction: row;
+}
+
+
+
   </style>
+}
 </head>
 
 <body>
@@ -198,7 +215,7 @@ flex-direction: column;
     <div class="menu">
       <div class="category">
         <button class="dropbtn">Coding <br/>Projects</button>
-        <div class="dropdown-content">
+        <div class="sub-category">
           <a href="#">Link 1</a>
           <a href="#">Link 2</a>
           <a href="#">Link 3</a>
@@ -206,16 +223,22 @@ flex-direction: column;
       </div>
       <div class="category">
         <button class="dropbtn">Social <br/> Media </button>
-        <div class="dropdown-content">
+        <div class="sub-categories">
+          <div class = sub-category">
+        <button class= "subbtn"> rps </button>
+         <div class = "sideContent">
           <a href="#">Link 1</a>
           <a href="#">Link 2</a>
           <a href="#">Link 3</a>
         </div>
       </div>
+        </div>
+      </div>
     <div class="category">
         <button class="dropbtn">Social <br/> Media </button>
-        <div class="dropdown-content">
+        <div class="sub-category">
           <a href="#">Link 1</a>
+          <div class = "slideContent"> hi </div>
           <a href="#">Link 2</a>
           <a href="#">Link 3</a>
         </div>
