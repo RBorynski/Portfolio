@@ -154,26 +154,30 @@ nav {
   display: flex;
   display-content: space-between;
 background-color:red;
-width: 80%;
+width: 100%;
 }
 
 
 ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 0;
     margin: 0;
 }
 li {
     display: inline;
     position: relative;
-font-size: 4vmax;
-
+font-size: 5vmax;
+border: white;
+/*http://htmldog.com/techniques/dropdowns/*/
 }
 ul ul {
     position: absolute;
     display: none;
+}
+ul ul ul li {
+    font-size: 3vmax;
 }
 
 ul ul ul {
@@ -182,6 +186,19 @@ ul ul ul {
 }
 li:hover > ul {
     display: block;
+}
+
+.subc {
+  background-color:blue;
+ /* display: flex;*/
+  flex-direction: column;
+  justify-content:  space-evenly;
+  font-size: 4vmax;
+}
+
+.superSub{
+  font-size: 2vmax;
+  background-color: green;
 }
   .dropbtn {
     background-color: #4CAF50;
@@ -236,7 +253,7 @@ flex-direction: column;
  <ul class = "main">
     <li>
         <a href="">Birds</a>
-        <ul>
+        <ul class = "subc">
             <li><a href="">Ratites</a></li>
             <li><a href="">Fowl</a></li>
             <li><a href="">Neoaves</a></li>
@@ -244,17 +261,17 @@ flex-direction: column;
     </li>
    <li>
     <a href="">Mammals</a>
-    <ul>
+    <ul class = "subc">
         <li>
             <a href="">Monotremes</a>
-            <ul>
+            <ul class = "superSub" >
                 <li><a href="">Echidnas</a></li>
                 <li><a href="">Platypus</a></li>
             </ul>
         </li>
         <li>
             <a href="">Marsupials</a>
-            <ul>
+            <ul class = "superSub">
                 <li><a href="">Opossums</a></li>
                 <li><a href="">Numbats, etc.</a></li>
                 <li><a href="">Bandicoots, etc.</a></li>
@@ -263,7 +280,7 @@ flex-direction: column;
         </li>
         <li>
             <a href="">Placentals</a>
-            <ul>
+            <ul class = "superSub">
                 <li><a href="">Primates, ungulates, etc.</a></li>
                 <li><a href="">Anteaters, sloths, etc.</a></li>
                 <li><a href="">Elephants, etc.</a></li>
