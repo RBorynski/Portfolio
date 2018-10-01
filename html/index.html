@@ -176,6 +176,11 @@ ul ul {
     position: absolute;
     display: none;
 }
+
+ul ul li {
+    font-size: 3.5vmax;
+}
+
 ul ul ul li {
     font-size: 3vmax;
 }
@@ -185,9 +190,12 @@ ul ul ul {
     top: 0;
 }
 li:hover > ul {
-    display: block;
+    display: flex;
+    flex-direction:column;
 }
-
+li:hover  {
+    background-color:rgba(76, 25, 25, 0.47);
+}
 .subc {
   background-color:blue;
  /*'-æ='*/
@@ -264,7 +272,7 @@ flex-direction: column;
     <a href="">Coding</a>
     <ul class = "subc">
         <li>
-            <a href="">Rock, Paper, Scissors</a>
+            <a href="">RPS</a>
             <ul class = "superSub" >
                 <li><a href="">GH</a></li>
                 <li><a href="">Live</a></li>
