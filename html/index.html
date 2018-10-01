@@ -150,8 +150,39 @@ nav {
  border-radius: 0 0 20% 20%;
   }
 
+.main {
+  display: flex;
+  display-content: space-between;
+background-color:red;
+width: 80%;
+}
 
 
+ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0;
+    margin: 0;
+}
+li {
+    display: inline;
+    position: relative;
+font-size: 4vmax;
+
+}
+ul ul {
+    position: absolute;
+    display: none;
+}
+
+ul ul ul {
+    left: 100%;
+    top: 0;
+}
+li:hover > ul {
+    display: block;
+}
   .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -190,18 +221,8 @@ font-size: 3vmax;
 flex-direction: column;
 }
 
-.tabl {
-  width: 400%;
-  background-color: blue;
-  height: 400%;
-z-index: 3;
-}
-td{
-display-flex;
-border-style: solid;
-border:5px solid red;
-}
 
+.name{width:90%}
 
   </style>
 
@@ -211,46 +232,47 @@ border:5px solid red;
   <div class="me">
 
     <nav>
-      <div class="category">
-        <button class="dropbtn">Coding <br/>Projects</button>
-        <div class="sub-category_List tabl">
-        <table>
-  <tr>
-    <th>Project</th>
-    <th>Live</th>
-    <th>Github</th>
-  </tr>
-  <tr>
-    <td>Rock <br/> Paper <br/>Scissors</td>
-    <td> Live </td>
-    <td>Github</td>
-  </tr>
-  <tr>
-    <td>Calendar App</td>
-    <td> <a href="https://github.com/mattesongrossman/Calendar_App">Github</a></td>
-    <td> <a href="https://still-earth-11122.herokuapp.com">Live</a>
-     </td>
-  </tr>
-</table>
-        </div>
-      </div>
-     <div class="category">
-        <button class="dropbtn">Coding <br/>Projects</button>
-        <div class="sub-category_List">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
-      <div class="category">
-        <button class="dropbtn">Coding <br/>Projects</button>
-        <div class="sub-category_List">
-          <a href="#">Link 1</a>
-          <a href="#">Link 2</a>
-          <a href="#">Link 3</a>
-        </div>
-      </div>
 
+ <ul class = "main">
+    <li>
+        <a href="">Birds</a>
+        <ul>
+            <li><a href="">Ratites</a></li>
+            <li><a href="">Fowl</a></li>
+            <li><a href="">Neoaves</a></li>
+        </ul>
+    </li>
+   <li>
+    <a href="">Mammals</a>
+    <ul>
+        <li>
+            <a href="">Monotremes</a>
+            <ul>
+                <li><a href="">Echidnas</a></li>
+                <li><a href="">Platypus</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Marsupials</a>
+            <ul>
+                <li><a href="">Opossums</a></li>
+                <li><a href="">Numbats, etc.</a></li>
+                <li><a href="">Bandicoots, etc.</a></li>
+                <li><a href="">Kangaroos, koalas, wombats, etc.</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="">Placentals</a>
+            <ul>
+                <li><a href="">Primates, ungulates, etc.</a></li>
+                <li><a href="">Anteaters, sloths, etc.</a></li>
+                <li><a href="">Elephants, etc.</a></li>
+            </ul>
+        </li>
+    </ul>
+</li>
+    <!-- etc. -->
+</ul>
     </nav>
     <div class="pic"> </div>
   </div>

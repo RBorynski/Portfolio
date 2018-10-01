@@ -36,10 +36,10 @@ function responsivenessOnPipe(mql) {
       }
     }
   }
-  drynessOnPipe(four80, "50%");
-  drynessOnPipe(mqls[1], "60%");
+  drynessOnPipe(four80, "45%");
+  drynessOnPipe(mqls[1], "55%");
   drynessOnPipe(mqls[2], "80%");
-  drynessOnPipe(mqls[3], "90%");
+  drynessOnPipe(mqls[3], "85%");
 }
 
 for (let i = 0; i < mqls.length; i++) {
