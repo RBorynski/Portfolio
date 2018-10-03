@@ -8,7 +8,9 @@
     width: 100%;
     transition: 5s;
   }
-
+.mainTable{
+  display: none;
+}
 
   .me {
     ul,
@@ -87,7 +89,7 @@
     height: auto;
     margin: 0 auto;
   }
-  /*#contact:click {
+  /*#contact:active {
     top: 600px;
 }*/
 
@@ -118,25 +120,23 @@
 
 
 
+.unveilMore {
+    padding: 3%;
+    text-align: center;
+    color: white;
 
-
-
-  @media screen and (max-width: 1024px) and (orientation: landscape)
-  /*tablet landscape*/
-
-  {}
-
-  @media screen and (max-width: 1020px) and (orientation: portrait) {
-    /*phone portrait */
-    /* window.matchMedia[0]*/
-    .pic {
-      position: relative;
-      top: -90px;
-      background-size: 100%;
-    }
-
-
+    flex-direction: row;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+  background: orange;
+ border-radius: 0 0 20% 20%;
+ display: none;
   }
+
+
+
+
 nav {
     padding: 3%;
     text-align: center;
@@ -177,11 +177,13 @@ ul ul {
 }
 
 ul ul li {
-    font-size: 3.5vmax;
+    font-size: 4.5vmax;
+/*list item in menu*/
 }
 
 ul ul ul li {
     font-size: 3.5vmax;
+/*list item in sub-menu*/
 }
 
 ul ul ul li:hover {
@@ -196,7 +198,7 @@ li:hover > ul {
     display: flex;
     flex-direction:column;
 }
-li:hover  {
+li:hover {
     background-color:rgba(76, 25, 25, 0.47);
 }
 .dropdown {
@@ -215,13 +217,35 @@ li:hover  {
  /*greenish blue*/
 }
 
-
-
-
-
-
 .name{width:90%}
 
+ @media screen and (max-width: 1024px) and (orientation: landscape)
+  /*tablet landscape*/
+
+  {}
+
+  @media screen and (max-width: 1020px) and (orientation: portrait) {
+    /*phone portrait */
+    /* window.matchMedia[0]*/
+    .pic {
+      position: relative;
+      top: -90px;
+      background-size: 100%;
+    }
+  }
+@media screen and (orientation: portrait (max-width: 1024px)) {
+    /*phone portrait */
+    /* window.matchMedia[0]*/
+    .main {
+      display: none;
+    }
+.unveilMore {
+      display: flex;
+    }
+ .mainTable {
+      display: flex;
+    }
+}
   </style>
 
 </head>
@@ -230,20 +254,43 @@ li:hover  {
   <div class="me">
 
     <nav>
-
+<button class = "unveilMore">See My Portfolio</button>
  <ul class = "main">
     <li>
-    <a href="">Coding</a>
+    <a>Coding</a>
     <ul class = "dropdown">
         <li>
-            <a href="">RPS</a>
+            <a>RPS</a>
             <ul class = "subDropdown" >
                 <li><a href="">GH</a></li>
                 <li><a href="">Live</a></li>
             </ul>
         </li>
         <li>
-            <a href="">E-Reader</a>
+            <a>E-Reader</a>
+            <ul class = "subDropdown">
+                <li><a href="">GH</a></li>
+                <li><a href="">Live</a></li>
+            </ul>
+        </li>
+        <li>
+           <a href="">CodeSignal</a>
+
+        </li>
+    </ul>
+</li>
+<li>
+    <a>Coding</a>
+    <ul class = "dropdown">
+        <li>
+            <a>RPS</a>
+            <ul class = "subDropdown" >
+                <li><a href="">GH</a></li>
+                <li><a href="">Live</a></li>
+            </ul>
+        </li>
+        <li>
+            <a>E-Reader</a>
             <ul class = "subDropdown">
                 <li><a href="">GH</a></li>
                 <li><a href="">Live</a></li>
@@ -260,7 +307,7 @@ li:hover  {
 </li>
     <!-- etc. -->
     <li>
-        <a href="">Birds</a>
+        <a>Birds</a>
         <ul class = "dropdown">
             <li><a href="">Ratites</a></li>
             <li><a href="">Fowl</a></li>
@@ -277,6 +324,16 @@ li:hover  {
     </p>
     <button id='unveil'>Continue!</button>
   </div>
-
+<table class ="mainTable" style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th colspan="2">Telephone</th>
+  </tr>
+  <tr>
+    <td>Bill Gates</td>
+    <td>55577854</td>
+    <td>55577855</td>
+  </tr>
+</table>
 <script src="script.js"></script>
 </body>
