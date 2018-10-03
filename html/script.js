@@ -34,7 +34,7 @@ function responsivenessOnPipe(mql) {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
         marioPipe.style.top = perc;
         if (portfPerc !== null) {
-          // unveilButton.style.background = "red";
+          unveilButton.style.background = "red";
           unveilMoreButton.addEventListener("click", function(evt) {
             marioPipe.style.top = portfPerc;
             mainTable.scrollIntoView(true);
