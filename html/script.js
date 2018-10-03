@@ -1,7 +1,7 @@
 const unveilButton = document.getElementById("unveil");
 const marioPipe = document.getElementById("contact");
 const list = document.getElementsByTagName("nav")[0];
-
+const unveilMoreButton = document.getElementsByClassName("unveilMore")[0];
 let hasUnveilButtonBeenClicked = false;
 // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as guide  for setting up multiple window matches
 var mqls = [
@@ -20,7 +20,7 @@ var mqls = [
 function responsivenessOnPipe(mql) {
   const four80 = mqls[0];
 
-  function drynessOnPipe(mquery, perc) {
+  function drynessOnPipe(mquery, perc, portfPerc) {
     if (mquery.matches) {
       // 480  cell phone portrait
       if (!hasUnveilButtonBeenClicked) {
@@ -33,13 +33,20 @@ function responsivenessOnPipe(mql) {
       } else {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
         marioPipe.style.top = perc;
+        if (portfPerc !== null) {
+          // unveilButton.style.background = "red";
+          unveilMoreButton.addEventListener("click", function(evt) {
+            marioPipe.style.top = portfPerc;
+            mainTable.scrollIntoView(true);
+          });
+        }
       }
     }
   }
-  drynessOnPipe(four80, "45%");
-  drynessOnPipe(mqls[1], "55%");
-  drynessOnPipe(mqls[2], "80%");
-  drynessOnPipe(mqls[3], "85%");
+  drynessOnPipe(four80, "45%", "85%");
+  drynessOnPipe(mqls[1], "55%", "95%");
+  drynessOnPipe(mqls[2], "80%", null);
+  drynessOnPipe(mqls[3], "85%", null);
 }
 
 for (let i = 0; i < mqls.length; i++) {
