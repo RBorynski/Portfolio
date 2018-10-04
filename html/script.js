@@ -4,6 +4,7 @@ const list = document.getElementsByTagName("nav")[0];
 const unveilMoreButton = document.getElementsByClassName("unveilMore")[0];
 const mainTable = document.getElementsByClassName("mainTable")[0];
 let hasUnveilButtonBeenClicked = false;
+let hasUnveilMoreButtonBeenClicked = false;
 // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as guide  for setting up multiple window matches
 var mqls = [
   window.matchMedia("(max-width: 480px)"),
@@ -21,7 +22,7 @@ var mqls = [
 function responsivenessOnPipe(mql) {
   const four80 = mqls[0];
 
-  function drynessOnPipe(mquery, perc, portfPerc, ddfd) {
+  function drynessOnPipe(mquery, perc, pipeOnSecondClick, portfolioTop) {
     if (mquery.matches) {
       // 480  cell phone portrait
       if (!hasUnveilButtonBeenClicked) {
@@ -34,21 +35,40 @@ function responsivenessOnPipe(mql) {
       } else {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
         marioPipe.style.top = perc;
-        if (portfPerc !== null) {
-          unveilButton.style.background = "red";
-          unveilMoreButton.addEventListener("click", function(evt) {
-            marioPipe.style.top = portfPerc;
-            mainTable.style.display = "flex";
-            mainTable.style.top = ddfd;
-            mainTable.scrollIntoView(true);
-            const b = ddfd;
-          });
-        }
       }
     }
+    // if (mquery.matches) {
+    //   // 480  cell phone portrait
+    //   if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
+    //     // unveilButton.style.background = "red";
+    //     unveilMoreButton.addEventListener("click", function(evt) {
+    //       marioPipe.style.top = pipeOnSecondClick;
+    //       mainTable.style.display = "flex";
+    //       mainTable.style.top = portfolioTop;
+    //       mainTable.scrollIntoView(true);
+    //       const b = portfolioTop;
+    //       hasUnveilMoreButtonBeenClicked = true;
+    //     });
+    //   } else {
+    //     //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
+    //     marioPipe.style.top = pipeOnSecondClick;
+    //     mainTable.style.top = portfolioTop;
+    //   }
+    // }
+
+    // if  pipeOnSecondClick !== null) {
+    //          unveilButton.style.background = "red";
+    //          unveilMoreButton.addEventListener("click", function(evt) {
+    //            marioPipe.style.top = pipeOnSecondClick;
+    //            mainTable.style.display = "flex";
+    //            mainTable.style.top = portfolioTop;
+    //            mainTable.scrollIntoView(true);
+    //            const b = ddfd;
+    //          });
+    //        }
   }
-  drynessOnPipe(four80, "45%", "85%", "47%");
-  drynessOnPipe(mqls[1], "55%", "95%", "57%");
+  drynessOnPipe(four80, "45%", "85%", "52%");
+  drynessOnPipe(mqls[1], "55%", "95%", "62%");
   drynessOnPipe(mqls[2], "80%", null, null);
   drynessOnPipe(mqls[3], "85%", null, null);
 }
