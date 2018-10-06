@@ -19,6 +19,10 @@ var mqls = [
   )
 ];
 
+// unveilMoreButton.addEventListener("click", function(evt) {
+//   list.style.display = "flex";
+// });
+
 function responsivenessOnPipe(mql) {
   const four80 = mqls[0];
 
@@ -32,29 +36,29 @@ function responsivenessOnPipe(mql) {
           hasUnveilButtonBeenClicked = true;
           list.scrollIntoView(true);
         });
-      } else {
+      } else if (
+        !hasUnveilMoreButtonBeenClicked &&
+        hasUnveilButtonBeenClicked
+      ) {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
+        // unveilButton.style.background = "red";
         marioPipe.style.top = perc;
+        unveilMoreButton.addEventListener("click", function(evt) {
+          marioPipe.style.top = pipeOnSecondClick;
+          mainTable.style.display = "flex";
+          mainTable.style.top = portfolioTop;
+          // mainTable.scrollIntoView(true);
+          const b = portfolioTop;
+          hasUnveilMoreButtonBeenClicked = true;
+        });
+      } else if (hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
+        //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
+        marioPipe.style.top = pipeOnSecondClick;
+        mainTable.style.top = portfolioTop;
       }
     }
-    // if (mquery.matches) {
-    //   // 480  cell phone portrait
-    //   if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
-    //     // unveilButton.style.background = "red";
-    //     unveilMoreButton.addEventListener("click", function(evt) {
-    //       marioPipe.style.top = pipeOnSecondClick;
-    //       mainTable.style.display = "flex";
-    //       mainTable.style.top = portfolioTop;
-    //       mainTable.scrollIntoView(true);
-    //       const b = portfolioTop;
-    //       hasUnveilMoreButtonBeenClicked = true;
-    //     });
-    //   } else {
-    //     //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
-    //     marioPipe.style.top = pipeOnSecondClick;
-    //     mainTable.style.top = portfolioTop;
-    //   }
-    // }
+
+    // 480  cell phone portrait
 
     // if  pipeOnSecondClick !== null) {
     //          unveilButton.style.background = "red";
