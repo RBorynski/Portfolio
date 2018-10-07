@@ -9,7 +9,10 @@
     transition: 5s;
   }
 .mainTable{
-  display: none;
+  display: flex;
+flex-direction: column;
+width: 100%;
+height: 30%;
 }
 
   .me {
@@ -121,7 +124,7 @@
   background: orange;
  border-radius: 0 0 20% 20%;
  display: none;
- font-size:6 vmax;
+/* font-size:vmax;*/
  background-color : rgba(101, 15, 22, 0.45);
   }
 
@@ -215,15 +218,7 @@ li:hover {
 
   {}
 
-  @media screen and (max-width: 1020px) and (orientation: portrait) {
-    /*phone portrait */
-    /* window.matchMedia[0]*/
-    .pic {
-      position: relative;
-      top: -90px;
-      background-size: 100%;
-    }
-  }
+
 @media screen and (orientation: portrait) and  (max-width: 1024px) {
     /*phone portrait */
     /* window.matchMedia[0]*/
@@ -234,10 +229,16 @@ li:hover {
       display: flex;
     }
  .mainTable {
-      display: none;
+      display: flex;
       position: relative;
       z-index: -1;
-    }*/
+    }
+.pic {
+      position: relative;
+      top: -90px;
+      background-size: 100%;
+    }
+
 }
   </style>
 
@@ -317,7 +318,7 @@ li:hover {
     </p>
     <button id='unveil'>Continue!</button>
   </div>
-<table class ="mainTable" style="width:100%">
+<table class ="mainTable" >
   <tr>
     <th>Name</th>
     <th colspan="3">Telephone</th>

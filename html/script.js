@@ -7,9 +7,9 @@ let hasUnveilButtonBeenClicked = false;
 let hasUnveilMoreButtonBeenClicked = false;
 // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as guide  for setting up multiple window matches
 var mqls = [
-  window.matchMedia("(max-width: 480px)"),
+  window.matchMedia("(max-width: 480px) and (orientation:portrait)"),
   window.matchMedia(
-    "(min-width: 764px) and (max-width: 1024px) and (orientation:portrait)"
+    "(min-width: 481px) and (max-width: 1024px) and (orientation:portrait)"
   ),
   window.matchMedia(
     "(min-width: 481px) and (max-width: 880px)and (orientation:landscape)"
@@ -29,29 +29,36 @@ function responsivenessOnPipe(mql) {
   function drynessOnPipe(mquery, perc, pipeOnSecondClick, portfolioTop) {
     if (mquery.matches) {
       // 480  cell phone portrait
-      if (!hasUnveilButtonBeenClicked) {
-        // unveilButton.style.background = "red";
-        unveilButton.addEventListener("click", function(evt) {
+      // unveilButton.style.background = "red";
+      unveilButton.addEventListener("click", function(evt) {
+        if (!hasUnveilButtonBeenClicked) {
+          list.scrollIntoView(true);
           marioPipe.style.top = perc;
           hasUnveilButtonBeenClicked = true;
-          list.scrollIntoView(true);
-        });
-      } else if (
-        !hasUnveilMoreButtonBeenClicked &&
-        hasUnveilButtonBeenClicked
-      ) {
-        //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
-        // unveilButton.style.background = "red";
-        marioPipe.style.top = perc;
-        unveilMoreButton.addEventListener("click", function(evt) {
+        }
+      });
+
+      //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
+      // unveilButton.style.background = "red";
+      unveilMoreButton.addEventListener("click", function(evt) {
+        if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
           marioPipe.style.top = pipeOnSecondClick;
           mainTable.style.display = "flex";
           mainTable.style.top = portfolioTop;
           // mainTable.scrollIntoView(true);
           const b = portfolioTop;
           hasUnveilMoreButtonBeenClicked = true;
-        });
-      } else if (hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
+        }
+      });
+      if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
+        marioPipe.style.top = perc;
+      }
+
+      if (
+        hasUnveilMoreButtonBeenClicked &&
+        hasUnveilButtonBeenClicked &&
+        pipeOnSecondClick !== null
+      ) {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
         marioPipe.style.top = pipeOnSecondClick;
         mainTable.style.top = portfolioTop;
