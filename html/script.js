@@ -31,7 +31,7 @@ function responsivenessOnPipe(mql) {
       // 480  cell phone portrait
       // unveilButton.style.background = "red";
       unveilButton.addEventListener("click", function(evt) {
-        if (!hasUnveilButtonBeenClicked) {
+        {
           list.scrollIntoView(true);
           marioPipe.style.top = perc;
           hasUnveilButtonBeenClicked = true;
@@ -41,7 +41,7 @@ function responsivenessOnPipe(mql) {
       //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
       // unveilButton.style.background = "red";
       unveilMoreButton.addEventListener("click", function(evt) {
-        if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
+        if (hasUnveilButtonBeenClicked) {
           marioPipe.style.top = pipeOnSecondClick;
           mainTable.style.display = "flex";
           mainTable.style.top = portfolioTop;
