@@ -25,7 +25,7 @@ var mqls = [
 const derivePortfolioHeight = (pipeTop, portfolioTop) => {
   let subtraction = parseFloat(pipeTop.replace(/%/gi, ""));
   subtraction -= portfolioTop.replace(/%/gi, "");
-  subtraction += 5;
+  // subtraction;
   let backToString = subtraction.toString();
   return (backToString += "?");
 };
