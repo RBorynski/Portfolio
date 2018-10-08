@@ -22,7 +22,14 @@ var mqls = [
 // unveilMoreButton.addEventListener("click", function(evt) {
 //   list.style.display = "flex";
 // });
-
+const derivePortfolioHeight = (pipeTop, portfolioTop) => {
+  let subtraction = parseFloat(pipeTop.replace(/%/gi, ""));
+  subtraction -= portfolioTop.replace(/%/gi, "");
+  subtraction += 5;
+  let backToString = subtraction.toString();
+  return (backToString += "?");
+};
+console.log(derivePortfolioHeight("9", "6"));
 function responsivenessOnPipe(mql) {
   const four80 = mqls[0];
 
@@ -30,6 +37,7 @@ function responsivenessOnPipe(mql) {
     if (mquery.matches) {
       // 480  cell phone portrait
       // unveilButton.style.background = "red";
+
       unveilButton.addEventListener("click", function(evt) {
         {
           list.scrollIntoView(true);
@@ -45,8 +53,12 @@ function responsivenessOnPipe(mql) {
           marioPipe.style.top = pipeOnSecondClick;
           mainTable.style.display = "flex";
           mainTable.style.top = portfolioTop;
+          mainTable.style.height = derivePortfolioHeight(
+            pipeOnSecondClick,
+            portfolioTop
+          );
           // mainTable.scrollIntoView(true);
-          const b = portfolioTop;
+          // mainTable.style.height =
           hasUnveilMoreButtonBeenClicked = true;
         }
       });
