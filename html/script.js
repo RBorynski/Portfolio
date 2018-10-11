@@ -1,6 +1,8 @@
 const unveilButton = document.getElementById("unveil");
 const marioPipe = document.getElementById("contact");
 const list = document.getElementsByTagName("nav")[0];
+const statement = document.getElementsByTagName("p")[0];
+
 const unveilMoreButton = document.getElementsByClassName("unveilMore")[0];
 const mainTable = document.getElementsByClassName("mainTable")[0];
 let hasUnveilButtonBeenClicked = false;
@@ -25,11 +27,11 @@ var mqls = [
 const derivePortfolioHeight = (pipeTop, portfolioTop) => {
   let subtraction = parseFloat(pipeTop.replace(/%/gi, ""));
   subtraction -= portfolioTop.replace(/%/gi, "");
-  // subtraction;
+  subtraction += 5;
   let backToString = subtraction.toString();
   return (backToString += "?");
 };
-console.log(derivePortfolioHeight("9", "6"));
+
 function responsivenessOnPipe(mql) {
   const four80 = mqls[0];
 
@@ -43,6 +45,7 @@ function responsivenessOnPipe(mql) {
           list.scrollIntoView(true);
           marioPipe.style.top = perc;
           hasUnveilButtonBeenClicked = true;
+          statement.style.color = "rgba(0, 0, 0, 0)";
         }
       });
 
