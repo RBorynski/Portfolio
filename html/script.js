@@ -16,9 +16,7 @@ var mqls = [
   window.matchMedia(
     "(min-width: 481px) and (max-width: 880px)and (orientation:landscape)"
   ),
-  window.matchMedia(
-    "(min-width: 1000px) and (max-width: 1600px)and (orientation:landscape)"
-  )
+  window.matchMedia("(min-width: 1000px) and (orientation:landscape)")
 ];
 
 // unveilMoreButton.addEventListener("click", function(evt) {
@@ -83,7 +81,7 @@ function responsivenessOnPipe(mql) {
   drynessOnPipe(four80, "45%", "85%", "52%");
   drynessOnPipe(mqls[1], "55%", "95%", "62%");
   drynessOnPipe(mqls[2], "80%", "120%", "86%");
-  drynessOnPipe(mqls[3], "85%", "125%", "91%");
+  drynessOnPipe(mqls[3], "85%", "127%", "96%");
 }
 
 for (let i = 0; i < mqls.length; i++) {
