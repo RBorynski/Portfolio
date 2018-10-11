@@ -79,24 +79,11 @@ function responsivenessOnPipe(mql) {
         mainTable.style.top = portfolioTop;
       }
     }
-
-    // 480  cell phone portrait
-
-    // if  pipeOnSecondClick !== null) {
-    //          unveilButton.style.background = "red";
-    //          unveilMoreButton.addEventListener("click", function(evt) {
-    //            marioPipe.style.top = pipeOnSecondClick;
-    //            mainTable.style.display = "flex";
-    //            mainTable.style.top = portfolioTop;
-    //            mainTable.scrollIntoView(true);
-    //            const b = ddfd;
-    //          });
-    //        }
   }
   drynessOnPipe(four80, "45%", "85%", "52%");
   drynessOnPipe(mqls[1], "55%", "95%", "62%");
-  drynessOnPipe(mqls[2], "80%", null, null);
-  drynessOnPipe(mqls[3], "85%", null, null);
+  drynessOnPipe(mqls[2], "80%", "120%", "86%");
+  drynessOnPipe(mqls[3], "85%", "125%", "91%");
 }
 
 for (let i = 0; i < mqls.length; i++) {
