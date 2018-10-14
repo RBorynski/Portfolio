@@ -5,6 +5,7 @@ const statement = document.getElementsByTagName("p")[0];
 
 const unveilMoreButton = document.getElementsByClassName("unveilMore")[0];
 const portfolioMenu = document.getElementsByClassName("portfolioMenu")[0];
+const mainTable = document.getElementsByClassName("mainTable")[0];
 let hasUnveilButtonBeenClicked = false;
 let hasUnveilMoreButtonBeenClicked = false;
 // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as guide  for setting up multiple window matches
@@ -54,6 +55,7 @@ function responsivenessOnPipe(mql) {
           marioPipe.style.top = pipeOnSecondClick;
           portfolioMenu.style.display = "flex";
           portfolioMenu.style.top = portfolioTop;
+          mainTable.style.display = "flex";
           portfolioMenu.style.height = derivePortfolioHeight(
             pipeOnSecondClick,
             portfolioTop
@@ -75,6 +77,7 @@ function responsivenessOnPipe(mql) {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
         marioPipe.style.top = pipeOnSecondClick;
         portfolioMenu.style.top = portfolioTop;
+        mainTable.style.display = "flex";
       }
     }
   }
