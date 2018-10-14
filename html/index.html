@@ -146,10 +146,10 @@ nav {
     width: 80%;
     margin: 0 auto;
   background: orange;
- border-radius: 0 0 20% 20%;
+ border-radius: 0;
   }
 
-.main {
+.navWithMuliLevelDropdowns {
   display: none;
   display-content: space-between;
 background-color:red;
@@ -227,7 +227,7 @@ li:hover {
 @media screen and (orientation: portrait) and  (max-width: 1024px) {
     /*phone portrait */
     /* window.matchMedia[0]*/
-    .main {
+    .navWithMuliLevelDropdowns {
       display: none;
     }
 .unveilMore {
@@ -254,7 +254,28 @@ li:hover {
 
     <nav>
 <button class = "unveilMore">My Portfolio</button>
- <ul class = "main">
+    </nav>
+    <div class="pic"> </div>
+  </div>
+  <div id='contact'>
+    <p> Steve Jobs once said “You can't connect the dots looking forward; you can only connect them looking backwards.” Coming from a content and marketing background, I thought I was jumping ship and changing careers completely by attending a software engineering bootcamp. What I realized Is that development and content go hand in hand as melody and rhyme in creating a great overall product for people to experience. Through my time at General Assembly, I engineered and designed products where the content and code were interwined, such as a themed "Man vs. Machine" Rock, Paper, Scissors game and an intuitive E-Reader. I am looking to work with those that share in that vision.
+    </p>
+    <button id='unveil'>Continue!</button>
+  </div>
+  <nav class = "portfolioMenu">
+<table class ="mainTable" >
+  <tr>
+    <th>Name</th>
+    <th colspan="3">Telephone</th>
+  </tr>
+  <tr>
+    <td>Bill Gates</td>
+    <td>55577854</td>
+    <td>55577855</td>
+  </tr>
+</nav>
+</table>
+ <ul class = "navWithMuliLevelDropdowns">
     <li>
     <a>Coding <br> Coding</a>
     <ul class = "dropdown">
@@ -315,26 +336,5 @@ li:hover {
     </li>
 
 </ul>
-    </nav>
-    <div class="pic"> </div>
-  </div>
-  <div id='contact'>
-    <p> Steve Jobs once said “You can't connect the dots looking forward; you can only connect them looking backwards.” Coming from a content and marketing background, I thought I was jumping ship and changing careers completely by attending a software engineering bootcamp. What I realized Is that development and content go hand in hand as melody and rhyme in creating a great overall product for people to experience. Through my time at General Assembly, I engineered and designed products where the content and code were interwined, such as a themed "Man vs. Machine" Rock, Paper, Scissors game and an intuitive E-Reader. I am looking to work with those that share in that vision.
-    </p>
-    <button id='unveil'>Continue!</button>
-  </div>
-  <nav class = "portfolioMenu"
-<table class ="mainTable" >
-  <tr>
-    <th>Name</th>
-    <th colspan="3">Telephone</th>
-  </tr>
-  <tr>
-    <td>Bill Gates</td>
-    <td>55577854</td>
-    <td>55577855</td>
-  </tr>
-</nav>
-</table>
 <script src="script.js"></script>
 </body>
