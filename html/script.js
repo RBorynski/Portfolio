@@ -33,21 +33,23 @@ const derivePortfolioHeight = (pipeTop, portfolioTop) => {
   let backToString = subtraction.toString();
   return (backToString += "?");
 };
-const changeMenuTypeBasedOnOrientation = () => {
-  const orientation = window.screen.orientation.type;
-  const menu = orientation.includes("landscape")
-    ? navWithMultiLevelDropdowns
-    : mainTable;
-  menu.style.display = "flex";
-};
 
 function responsivenessOnPipe(mql) {
   const four80 = mqls[0];
 
   function drynessOnPipe(mquery, perc, pipeOnSecondClick, portfolioTop) {
     if (mquery.matches) {
-      // 480  cell phone portrait
-      // unveilButton.style.background = "red";
+      const changeMenuTypeBasedOnOrientation = () => {
+        const isOrientationPortrait = mquery.media.includes("portrait");
+        unveilButton.style.background = "red";
+        if (!isOrientationPortrait) {
+          navWithMultiLevelDropdowns.style.display = "flex";
+          mainTable.style.display = "none";
+        } else {
+          navWithMultiLevelDropdowns.style.display = "none";
+          mainTable.style.display = "flex";
+        }
+      };
 
       unveilButton.addEventListener("click", function(evt) {
         {
@@ -62,6 +64,7 @@ function responsivenessOnPipe(mql) {
       // unveilButton.style.background = "red";
       unveilMoreButton.addEventListener("click", function(evt) {
         if (hasUnveilButtonBeenClicked) {
+          console.log(window.screen.orientation.type.includes("portrait"));
           marioPipe.style.top = pipeOnSecondClick;
           portfolioMenu.style.display = "flex";
           portfolioMenu.style.top = portfolioTop;
@@ -74,6 +77,7 @@ function responsivenessOnPipe(mql) {
           // portfolioMenu.style.height =
           hasUnveilMoreButtonBeenClicked = true;
           changeMenuTypeBasedOnOrientation();
+          orientat.includes("portrait");
         }
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
@@ -88,7 +92,6 @@ function responsivenessOnPipe(mql) {
         //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
         marioPipe.style.top = pipeOnSecondClick;
         portfolioMenu.style.top = portfolioTop;
-        mainTable.style.display = "flex";
         changeMenuTypeBasedOnOrientation();
       }
     }
