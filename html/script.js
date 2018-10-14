@@ -33,6 +33,13 @@ const derivePortfolioHeight = (pipeTop, portfolioTop) => {
   let backToString = subtraction.toString();
   return (backToString += "?");
 };
+const changeMenuTypeBasedOnOrientation = () => {
+  const orientation = window.screen.orientation.type;
+  const menu = orientation.includes("landscape")
+    ? navWithMultiLevelDropdowns
+    : mainTable;
+  menu.style.display = "flex";
+};
 
 function responsivenessOnPipe(mql) {
   const four80 = mqls[0];
@@ -58,7 +65,7 @@ function responsivenessOnPipe(mql) {
           marioPipe.style.top = pipeOnSecondClick;
           portfolioMenu.style.display = "flex";
           portfolioMenu.style.top = portfolioTop;
-          mainTable.style.display = "flex";
+          // mainTable.style.display = "flex";
           portfolioMenu.style.height = derivePortfolioHeight(
             pipeOnSecondClick,
             portfolioTop
@@ -66,6 +73,7 @@ function responsivenessOnPipe(mql) {
           // portfolioMenu.scrollIntoView(true);
           // portfolioMenu.style.height =
           hasUnveilMoreButtonBeenClicked = true;
+          changeMenuTypeBasedOnOrientation();
         }
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
@@ -81,6 +89,7 @@ function responsivenessOnPipe(mql) {
         marioPipe.style.top = pipeOnSecondClick;
         portfolioMenu.style.top = portfolioTop;
         mainTable.style.display = "flex";
+        changeMenuTypeBasedOnOrientation();
       }
     }
   }
