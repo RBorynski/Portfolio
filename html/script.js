@@ -6,6 +6,9 @@ const statement = document.getElementsByTagName("p")[0];
 const unveilMoreButton = document.getElementsByClassName("unveilMore")[0];
 const portfolioMenu = document.getElementsByClassName("portfolioMenu")[0];
 const mainTable = document.getElementsByClassName("mainTable")[0];
+const navWithMultiLevelDropdowns = document.getElementsByClassName(
+  "navWithMuliLevelDropdowns"
+)[0];
 let hasUnveilButtonBeenClicked = false;
 let hasUnveilMoreButtonBeenClicked = false;
 // used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as guide  for setting up multiple window matches
