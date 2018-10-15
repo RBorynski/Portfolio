@@ -11,7 +11,7 @@ const navWithMultiLevelDropdowns = document.getElementsByClassName(
 )[0];
 let hasUnveilButtonBeenClicked = false;
 let hasUnveilMoreButtonBeenClicked = false;
-// used code from  http://www.javascriptkit.com/javatutors/matchmediamultiple.shtml as guide  for setting up multiple window matches
+
 var mqls = [
   window.matchMedia("(max-width: 480px) and (orientation:portrait)"),
   window.matchMedia(
@@ -64,7 +64,6 @@ function responsivenessOnPipe(mql) {
       // unveilButton.style.background = "red";
       unveilMoreButton.addEventListener("click", function(evt) {
         if (hasUnveilButtonBeenClicked) {
-          console.log(window.screen.orientation.type.includes("portrait"));
           marioPipe.style.top = pipeOnSecondClick;
           portfolioMenu.style.display = "flex";
           portfolioMenu.style.top = portfolioTop;
@@ -77,7 +76,9 @@ function responsivenessOnPipe(mql) {
           // portfolioMenu.style.height =
           hasUnveilMoreButtonBeenClicked = true;
           changeMenuTypeBasedOnOrientation();
-          orientat.includes("portrait");
+          setTimeout(function() {
+            portfolioMenu.style.zIndex = "4";
+          }, 4000);
         }
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
