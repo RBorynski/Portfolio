@@ -29,9 +29,10 @@ var mqls = [
 const derivePortfolioHeight = (pipeTop, portfolioTop) => {
   let subtraction = parseFloat(pipeTop.replace(/%/gi, ""));
   subtraction -= portfolioTop.replace(/%/gi, "");
-  subtraction += 5;
+
+  // subtraction += 5;
   let backToString = subtraction.toString();
-  return (backToString += "?");
+  return (backToString += "%");
 };
 
 function responsivenessOnPipe(mql) {
@@ -78,7 +79,8 @@ function responsivenessOnPipe(mql) {
           changeMenuTypeBasedOnOrientation();
           setTimeout(function() {
             portfolioMenu.style.zIndex = "4";
-          }, 4000);
+            portfolioMenu.scrollIntoView(true);
+          }, 8000);
         }
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
@@ -97,10 +99,10 @@ function responsivenessOnPipe(mql) {
       }
     }
   }
-  drynessOnPipe(four80, "45%", "85%", "52%");
-  drynessOnPipe(mqls[1], "55%", "95%", "62%");
-  drynessOnPipe(mqls[2], "80%", "120%", "86%");
-  drynessOnPipe(mqls[3], "85%", "127%", "96%");
+  drynessOnPipe(four80, "45%", "100%", "52%");
+  drynessOnPipe(mqls[1], "55%", "110%", "62%");
+  drynessOnPipe(mqls[2], "80%", "123%", "86%");
+  drynessOnPipe(mqls[3], "85%", "130%", "96%");
 }
 
 for (let i = 0; i < mqls.length; i++) {
