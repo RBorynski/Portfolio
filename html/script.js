@@ -30,7 +30,7 @@ const derivePortfolioHeight = (pipeTop, portfolioTop) => {
   let subtraction = parseFloat(pipeTop.replace(/%/gi, ""));
   subtraction -= portfolioTop.replace(/%/gi, "");
 
-  // subtraction += 5;
+  subtraction += 5;
   let backToString = subtraction.toString();
   return (backToString += "%");
 };
