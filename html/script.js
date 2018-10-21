@@ -27,7 +27,7 @@ var mqls = [
 //   list.style.display = "flex";
 // });
 const derivePortfolioHeight = (pipeTop, portfolioTop) => {
-  let subtraction = parseFloat(pipeTop.replace(/%/gi, ""));
+  let subtraction = parseFloat(pipeTop.replace(/%/gi, "")); //2
   subtraction -= portfolioTop.replace(/%/gi, "");
 
   subtraction += 5;
