@@ -61,8 +61,6 @@ function responsivenessOnPipe(mql) {
         }
       });
 
-      //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width
-      // unveilButton.style.background = "red";
       unveilMoreButton.addEventListener("click", function(evt) {
         if (hasUnveilButtonBeenClicked) {
           marioPipe.style.top = pipeOnSecondClick;
@@ -85,6 +83,7 @@ function responsivenessOnPipe(mql) {
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
         marioPipe.style.top = perc;
+        //if the button was already clicked at a different browser width and you want to adjust the pipe to the current width when resizing it
       }
 
       if (
@@ -99,6 +98,7 @@ function responsivenessOnPipe(mql) {
       }
     }
   }
+  // parameters are generally used for dynamic return values, but they are equally as useful for dynamic dom manipulation based on media query
   drynessOnPipe(four80, "45%", "100%", "52%");
   drynessOnPipe(mqls[1], "55%", "110%", "62%");
   drynessOnPipe(mqls[2], "80%", "123%", "86%");
