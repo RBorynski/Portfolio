@@ -81,7 +81,7 @@ function responsivenessOnPipe(mql) {
           }, 6000);
           setTimeout(function() {
             portfolioMenu.style.zIndex = "4";
-          }, 10000);
+          }, 12000);
         }
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
@@ -106,8 +106,8 @@ function responsivenessOnPipe(mql) {
     }
   }
   // parameters are generally used for dynamic return values, but they are equally as useful for dynamic dom manipulation based on media query
-  drynessOnPipe(four80, "45%", "100%", "52%");
-  drynessOnPipe(mqls[1], "55%", "110%", "62%");
+  drynessOnPipe(four80, "45%", "120%", "52%");
+  drynessOnPipe(mqls[1], "55%", "130%", "62%");
   drynessOnPipe(mqls[2], "80%", "113%", "86%");
   drynessOnPipe(mqls[3], "85%", "118%", "96%");
 }

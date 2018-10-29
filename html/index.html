@@ -11,13 +11,17 @@
 /*//rock paper scissors game, calendar, instagram, facebook,github to the project in and of itself,
 short stories, youtube page maybe, linkedin,
 //programming-rps, calendar app, e-reader, */
+#bottom{
+  z-index: 2;
+}
+
 .portfolioMenu{
   display: none;
 flex-direction: column;
 width: 100%;
 height: 30%;
 background-color: black;
-z-index: -2;
+z-index: -1;
 position: absolute;
 }
 
@@ -25,11 +29,11 @@ position: absolute;
     ul,
     toolbar,
     pic,
-    z-index: -1;
+    z-index: -2;
 
 
     height: 75%;
-    z-index: -1;
+
   }
 
 
@@ -225,16 +229,26 @@ li ul li:hover {
   height: 100%;
   width: 100%;
 display: none;
-color: orange;
+color: rgb(255,217,15);
 background: blue;
+  font-size: 4vmax;
+  margin: 3% 5% 0 1%;
+
+
 }
 
 .name{width:90%}
 
- @media screen and (max-width: 1024px) and (orientation: landscape)
+ @media screen  and (orientation: landscape)
   /*tablet landscape*/
 
-  {}
+  {
+.portfolioMenu{
+    width: 80%;
+    margin-left: 5%;
+    z-index: -1;
+    }
+  }
 
 
 @media screen and (orientation: portrait) and  (max-width: 1024px) {
