@@ -1,5 +1,6 @@
 const unveilButton = document.getElementById("unveil");
 const marioPipe = document.getElementById("contact");
+const menusAndPipe = document.getElementById("bottom");
 const list = document.getElementsByTagName("nav")[0];
 const statement = document.getElementsByTagName("p")[0];
 
@@ -30,7 +31,7 @@ const derivePortfolioHeight = (pipeTop, portfolioTop) => {
   let subtraction = parseFloat(pipeTop.replace(/%/gi, "")); //2
   subtraction -= portfolioTop.replace(/%/gi, "");
 
-  subtraction += 5;
+  subtraction -= 8;
   let backToString = subtraction.toString();
   return (backToString += "%");
 };
@@ -95,14 +96,18 @@ function responsivenessOnPipe(mql) {
         marioPipe.style.top = pipeOnSecondClick;
         portfolioMenu.style.top = portfolioTop;
         changeMenuTypeBasedOnOrientation();
+        portfolioMenu.style.height = derivePortfolioHeight(
+          pipeOnSecondClick,
+          portfolioTop
+        );
       }
     }
   }
   // parameters are generally used for dynamic return values, but they are equally as useful for dynamic dom manipulation based on media query
   drynessOnPipe(four80, "45%", "100%", "52%");
   drynessOnPipe(mqls[1], "55%", "110%", "62%");
-  drynessOnPipe(mqls[2], "80%", "123%", "86%");
-  drynessOnPipe(mqls[3], "85%", "130%", "96%");
+  drynessOnPipe(mqls[2], "80%", "113%", "86%");
+  drynessOnPipe(mqls[3], "85%", "118%", "96%");
 }
 
 for (let i = 0; i < mqls.length; i++) {
