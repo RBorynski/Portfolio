@@ -77,9 +77,11 @@ function responsivenessOnPipe(mql) {
           hasUnveilMoreButtonBeenClicked = true;
           changeMenuTypeBasedOnOrientation();
           setTimeout(function() {
-            portfolioMenu.style.zIndex = "4";
             portfolioMenu.scrollIntoView(true);
-          }, 8000);
+          }, 6000);
+          setTimeout(function() {
+            portfolioMenu.style.zIndex = "4";
+          }, 10000);
         }
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
