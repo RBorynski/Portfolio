@@ -81,7 +81,7 @@ function responsivenessOnPipe(mql) {
           }, 6000);
           setTimeout(function() {
             portfolioMenu.style.zIndex = "4";
-          }, 12000);
+          }, 8000);
         }
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
