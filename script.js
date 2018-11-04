@@ -3,7 +3,15 @@ const marioPipe = document.getElementById("contact");
 const menusAndPipe = document.getElementById("bottom");
 const list = document.getElementsByTagName("nav")[0];
 const statement = document.getElementsByTagName("p")[0];
-
+const links = document.getElementsByTagName("a");
+console.log(links);
+const makeLinksAppearInNewTab = () => {
+  for (let i = 0; i < links.length; i++) {
+    links[i].setAttribute("target", "_blank");
+  }
+};
+makeLinksAppearInNewTab();
+// links.setAttribute("target", "_blank");
 const unveilMoreButton = document.getElementsByClassName("unveilMore")[0];
 const portfolioMenu = document.getElementsByClassName("portfolioMenu")[0];
 const mainTable = document.getElementsByClassName("mainTable")[0];
