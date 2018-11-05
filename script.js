@@ -51,7 +51,6 @@ function responsivenessOnPipe(mql) {
     if (mquery.matches) {
       const changeMenuTypeBasedOnOrientation = () => {
         const isOrientationPortrait = mquery.media.includes("portrait");
-        unveilButton.style.background = "red";
         if (!isOrientationPortrait) {
           navWithMultiLevelDropdowns.style.display = "flex";
           mainTable.style.display = "none";
