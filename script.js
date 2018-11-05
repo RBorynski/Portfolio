@@ -4,7 +4,7 @@ const menusAndPipe = document.getElementById("bottom");
 const list = document.getElementsByTagName("nav")[0];
 const statement = document.getElementsByTagName("p")[0];
 const links = document.getElementsByTagName("a");
-console.log(links);
+let counter = 0;
 const makeLinksAppearInNewTab = () => {
   for (let i = 0; i < links.length; i++) {
     links[i].setAttribute("target", "_blank");
@@ -61,16 +61,17 @@ function responsivenessOnPipe(mql) {
       };
 
       unveilButton.addEventListener("click", function(evt) {
-        {
+        if (counter === 0) {
           list.scrollIntoView(true);
           marioPipe.style.top = perc;
           hasUnveilButtonBeenClicked = true;
           statement.style.color = "rgba(0, 0, 0, 0)";
+          counter++;
         }
       });
 
       unveilMoreButton.addEventListener("click", function(evt) {
-        if (hasUnveilButtonBeenClicked) {
+        if (hasUnveilButtonBeenClicked && counter === 1) {
           marioPipe.style.top = pipeOnSecondClick;
           portfolioMenu.style.display = "flex";
           portfolioMenu.style.top = portfolioTop;
@@ -89,6 +90,7 @@ function responsivenessOnPipe(mql) {
           setTimeout(function() {
             portfolioMenu.style.zIndex = "4";
           }, 8000);
+          counter++;
         }
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
