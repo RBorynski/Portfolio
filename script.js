@@ -15,8 +15,6 @@ makeLinksAppearInNewTab();
 const unveilMoreButton = document.getElementsByClassName("unveilMore")[0];
 const portfolioMenu = document.getElementsByClassName("portfolioMenu")[0];
 const mainTable = document.getElementsByClassName("mainTable")[0];
-const hamburgerMenu = document.getElementsByClassName("fa fa-bars")[0];
-const downArrow = document.getElementsByClassName("fa fa-level-down")[0];
 const navWithMultiLevelDropdowns = document.getElementsByClassName(
   "navWithMuliLevelDropdowns"
 )[0];
@@ -67,14 +65,14 @@ function responsivenessOnPipe(mql) {
         marioPipe.style.top = perc;
         hasUnveilButtonBeenClicked = true;
         statement.style.color = "rgba(0, 0, 0, 0)";
-        downArrow.style.display = "none";
+        unveilButton.style.display = "none";
       });
 
       unveilMoreButton.addEventListener("click", function(evt) {
         marioPipe.style.top = pipeOnSecondClick;
         portfolioMenu.style.display = "flex";
         portfolioMenu.style.top = portfolioTop;
-        hamburgerMenu.style.display = "none";
+        unveilMoreButton.style.display = "none";
         // mainTable.style.display = "flex";
         portfolioMenu.style.height = derivePortfolioHeight(
           pipeOnSecondClick,
@@ -116,8 +114,8 @@ function responsivenessOnPipe(mql) {
   // parameters are generally used for dynamic return values, but they are equally as useful for dynamic dom manipulation based on media query
   drynessOnPipe(four80, "45%", "130%", "52%");
   drynessOnPipe(mqls[1], "55%", "140%", "62%");
-  drynessOnPipe(mqls[2], "85%", "120%", "91%");
-  drynessOnPipe(mqls[3], "85%", "125%", "101%");
+  drynessOnPipe(mqls[2], "85%", "120%", "86%");
+  drynessOnPipe(mqls[3], "85%", "125%", "95%");
 }
 
 for (let i = 0; i < mqls.length; i++) {
