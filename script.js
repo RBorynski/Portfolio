@@ -61,37 +61,34 @@ function responsivenessOnPipe(mql) {
       };
 
       unveilButton.addEventListener("click", function(evt) {
-        if (counter === 0) {
-          list.scrollIntoView(true);
-          marioPipe.style.top = perc;
-          hasUnveilButtonBeenClicked = true;
-          statement.style.color = "rgba(0, 0, 0, 0)";
-          counter++;
-        }
+        list.scrollIntoView(true);
+        marioPipe.style.top = perc;
+        hasUnveilButtonBeenClicked = true;
+        statement.style.color = "rgba(0, 0, 0, 0)";
+        counter++;
+        // }
       });
 
       unveilMoreButton.addEventListener("click", function(evt) {
-        if (hasUnveilButtonBeenClicked && counter === 1) {
-          marioPipe.style.top = pipeOnSecondClick;
-          portfolioMenu.style.display = "flex";
-          portfolioMenu.style.top = portfolioTop;
-          // mainTable.style.display = "flex";
-          portfolioMenu.style.height = derivePortfolioHeight(
-            pipeOnSecondClick,
-            portfolioTop
-          );
-          // portfolioMenu.scrollIntoView(true);
-          // portfolioMenu.style.height =
-          hasUnveilMoreButtonBeenClicked = true;
-          changeMenuTypeBasedOnOrientation();
-          setTimeout(function() {
-            portfolioMenu.scrollIntoView(true);
-          }, 6000);
-          setTimeout(function() {
-            portfolioMenu.style.zIndex = "4";
-          }, 8000);
-          counter++;
-        }
+        marioPipe.style.top = pipeOnSecondClick;
+        portfolioMenu.style.display = "flex";
+        portfolioMenu.style.top = portfolioTop;
+        // mainTable.style.display = "flex";
+        portfolioMenu.style.height = derivePortfolioHeight(
+          pipeOnSecondClick,
+          portfolioTop
+        );
+        // portfolioMenu.scrollIntoView(true);
+        // portfolioMenu.style.height =
+        hasUnveilMoreButtonBeenClicked = true;
+        changeMenuTypeBasedOnOrientation();
+        setTimeout(function() {
+          portfolioMenu.scrollIntoView(true);
+        }, 6000);
+        setTimeout(function() {
+          portfolioMenu.style.zIndex = "4";
+        }, 8000);
+        counter++;
       });
       if (!hasUnveilMoreButtonBeenClicked && hasUnveilButtonBeenClicked) {
         marioPipe.style.top = perc;
@@ -125,4 +122,3 @@ for (let i = 0; i < mqls.length; i++) {
   responsivenessOnPipe(mqls[i]); // call listener function explicitly at run time
   mqls[i].addListener(responsivenessOnPipe); // attach listener function to listen in on state changes
 }
-
