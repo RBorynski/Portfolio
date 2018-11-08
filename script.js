@@ -15,6 +15,8 @@ makeLinksAppearInNewTab();
 const unveilMoreButton = document.getElementsByClassName("unveilMore")[0];
 const portfolioMenu = document.getElementsByClassName("portfolioMenu")[0];
 const mainTable = document.getElementsByClassName("mainTable")[0];
+const hamburgerMenu = document.getElementsByClassName("fa fa-bars")[0];
+const downArrow = document.getElementsByClassName("fa fa-level-down")[0];
 const navWithMultiLevelDropdowns = document.getElementsByClassName(
   "navWithMuliLevelDropdowns"
 )[0];
@@ -65,14 +67,14 @@ function responsivenessOnPipe(mql) {
         marioPipe.style.top = perc;
         hasUnveilButtonBeenClicked = true;
         statement.style.color = "rgba(0, 0, 0, 0)";
-        counter++;
-        // }
+        downArrow.style.display = "none";
       });
 
       unveilMoreButton.addEventListener("click", function(evt) {
         marioPipe.style.top = pipeOnSecondClick;
         portfolioMenu.style.display = "flex";
         portfolioMenu.style.top = portfolioTop;
+        hamburgerMenu.style.display = "none";
         // mainTable.style.display = "flex";
         portfolioMenu.style.height = derivePortfolioHeight(
           pipeOnSecondClick,
