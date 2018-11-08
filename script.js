@@ -117,7 +117,7 @@ function responsivenessOnPipe(mql) {
   // parameters are generally used for dynamic return values, but they are equally as useful for dynamic dom manipulation based on media query
   drynessOnPipe(four80, "45%", "130%", "52%");
   drynessOnPipe(mqls[1], "55%", "140%", "62%");
-  drynessOnPipe(mqls[2], "80%", "120%", "91%");
+  drynessOnPipe(mqls[2], "85%", "120%", "91%");
   drynessOnPipe(mqls[3], "85%", "125%", "101%");
 }
 
