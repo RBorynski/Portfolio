@@ -39,7 +39,7 @@ const derivePortfolioHeight = (pipeTop, portfolioTop) => {
   let subtraction = parseFloat(pipeTop.replace(/%/gi, "")); //2
   subtraction -= portfolioTop.replace(/%/gi, "");
 
-  subtraction -= 11;
+  subtraction -= 14;
   let backToString = subtraction.toString();
   return (backToString += "%");
 };
@@ -117,11 +117,12 @@ function responsivenessOnPipe(mql) {
   // parameters are generally used for dynamic return values, but they are equally as useful for dynamic dom manipulation based on media query
   drynessOnPipe(four80, "45%", "130%", "52%");
   drynessOnPipe(mqls[1], "55%", "140%", "62%");
-  drynessOnPipe(mqls[2], "80%", "113%", "86%");
-  drynessOnPipe(mqls[3], "85%", "118%", "96%");
+  drynessOnPipe(mqls[2], "80%", "120%", "91%");
+  drynessOnPipe(mqls[3], "85%", "125%", "101%");
 }
 
 for (let i = 0; i < mqls.length; i++) {
   responsivenessOnPipe(mqls[i]); // call listener function explicitly at run time
   mqls[i].addListener(responsivenessOnPipe); // attach listener function to listen in on state changes
 }
+
